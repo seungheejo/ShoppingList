@@ -23,7 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class ShoppingListActivity extends AppCompatActivity {
 
-    //動的にTextViewを作ってLinearLayoutにつけてみよう
+    //동적으로 TextView를 만들어 LinearLayout에 붙여 보자
     TextView []tv;
 
     @Override
@@ -60,7 +60,7 @@ public class ShoppingListActivity extends AppCompatActivity {
                         String product_number = ds.child("product_number").getValue().toString();
                         String product_type = ds.child("product_type").getValue(String.class);
 
-                        //メニューのカテゴリ
+                        //메뉴 카테고리
                         if(product_type.equals("a")){
                             product_type = "가전제품";
                         }else if(product_type.equals("b")){
@@ -73,7 +73,7 @@ public class ShoppingListActivity extends AppCompatActivity {
                             product_type = "가구";
                         }
 
-                        // LinearLayoutを作る
+                        // LinearLayout 생성
                         LinearLayout lm = new LinearLayout(ShoppingListActivity.this);
                         lm.setOrientation(LinearLayout.HORIZONTAL);
                         lm.setGravity(Gravity.CENTER);
@@ -85,7 +85,7 @@ public class ShoppingListActivity extends AppCompatActivity {
 
                         lm.addView(tv[i]);
 
-                        //チェックボックス
+                        //체크박스
                         final CheckBox cb = new CheckBox(ShoppingListActivity.this);
 
                         cb.setId(i);
@@ -124,13 +124,13 @@ public class ShoppingListActivity extends AppCompatActivity {
         return true;
     }
 
-    //アクションボタンをクリックすると
+    //액션버튼을 클릭하면
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
 
         int id = item.getItemId();
 
-        //メニューに戻る
+        //메뉴로 돌아감
         if(id == R.id.gomenu){
             Intent intent = new Intent(this, MenuChoiceActivity.class);
             startActivity(intent);
