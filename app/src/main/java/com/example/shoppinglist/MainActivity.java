@@ -29,11 +29,11 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    //irebase
+    //Firebase
     FirebaseDatabase database;
     DatabaseReference myRef;
 
-    //服
+    //옷
     private ImageView c1;
     private ImageView c2;
     private ImageView c3;
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageView c5;
     private ImageView c6;
 
-    //食べ物
+    //음식
     private ImageView f1;
     private ImageView f2;
     private ImageView f3;
@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageView f5;
     private ImageView f6;
 
-    //家具
+    //가구
     private ImageView fu1;
     private ImageView fu2;
     private ImageView fu3;
@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageView fu5;
     private ImageView fu6;
 
-    //家電製品
+    //전자제품
     private ImageView a1;
     private ImageView a2;
     private ImageView a3;
@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageView a5;
     private ImageView a6;
 
-    //バスルームの物
+    //욕실용품
     private ImageView b1;
     private ImageView b2;
     private ImageView b3;
@@ -84,18 +84,18 @@ public class MainActivity extends AppCompatActivity {
 
         setImageLongClickListener();
 
-        //初期にすべてのイメージを見せないようにしておく
+        //초기에 모든 이미지를 드러내지 않도록 해둠
         setImageInvisible();
 
 
         findViewById(R.id.toplinear).setOnDragListener(new DragListener());
         findViewById(R.id.bottomlinear).setOnDragListener(new DragListener());
 
-        //アクションバーのタイトル変更
+        //액션바 타이틀 변경
         getSupportActionBar().setTitle("");
-        //アクションバーの背景の色を変更
+        //액션바 배경색 변경
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(0xFFF5A9A9));
-        //ホームボタンを表示
+        //홈 버튼 표시
         getSupportActionBar().setDisplayHomeAsUpEnabled(false);
 
         int i = (int) (Math.random() * 10) + 1;
@@ -109,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
 
         public boolean onLongClick(View view) {
 
-            // タグを作る
+            // 태그 생성
             ClipData.Item item = new ClipData.Item((CharSequence) view.getTag());
 
             String[] mimeTypes = { ClipDescription.MIMETYPE_TEXT_PLAIN };
@@ -131,27 +131,27 @@ public class MainActivity extends AppCompatActivity {
 
         public boolean onDrag(View v, DragEvent event) {
 
-            // イベントを始まる
+            // 이벤트 시작
             switch (event.getAction()) {
 
-                // イメージのドラッグが始まる場合
+                // 이미지의 드래그가 시작할 경우
                 case DragEvent.ACTION_DRAG_STARTED:
                     Log.d("DragClickListener", "ACTION_DRAG_STARTED");
                     break;
 
-                // ドラッグしたイメージが入る場合
+                // 드래그한 이미지가 들어갈 경우
                 case DragEvent.ACTION_DRAG_ENTERED:
                     Log.d("DragClickListener", "ACTION_DRAG_ENTERED");
 
                     break;
 
-                // ドラッグしたイメージが外れた場合
+                // 드래그한 이미지가 벗어났을 경우
                 case DragEvent.ACTION_DRAG_EXITED:
                     Log.d("DragClickListener", "ACTION_DRAG_EXITED");
 
                     break;
 
-                // イメージをドラッグしてドロップする場合
+                // 이미지를 드래그해서 드랍할 경우
                 case DragEvent.ACTION_DROP:
                     Log.d("DragClickListener", "ACTION_DROP");
 
@@ -217,7 +217,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void setFindViewById(){
-        //服
+        //옷
         c1 = (ImageView) findViewById(R.id.c1);
         c2 = (ImageView) findViewById(R.id.c2);
         c3 = (ImageView) findViewById(R.id.c3);
@@ -225,7 +225,7 @@ public class MainActivity extends AppCompatActivity {
         c5 = (ImageView) findViewById(R.id.c5);
         c6 = (ImageView) findViewById(R.id.c6);
 
-        //食べ物
+        //음식
         f1 = (ImageView) findViewById(R.id.f1);
         f2 = (ImageView) findViewById(R.id.f2);
         f3 = (ImageView) findViewById(R.id.f3);
@@ -233,7 +233,7 @@ public class MainActivity extends AppCompatActivity {
         f5 = (ImageView) findViewById(R.id.f5);
         f6 = (ImageView) findViewById(R.id.f6);
 
-        //家具
+        //가구
         fu1 = (ImageView) findViewById(R.id.fu1);
         fu2 = (ImageView) findViewById(R.id.fu2);
         fu3 = (ImageView) findViewById(R.id.fu3);
@@ -241,7 +241,7 @@ public class MainActivity extends AppCompatActivity {
         fu5 = (ImageView) findViewById(R.id.fu5);
         fu6 = (ImageView) findViewById(R.id.fu6);
 
-        //家電製品
+        //전자제품
         a1 = (ImageView) findViewById(R.id.a1);
         a2 = (ImageView) findViewById(R.id.a2);
         a3 = (ImageView) findViewById(R.id.a3);
@@ -366,18 +366,18 @@ public class MainActivity extends AppCompatActivity {
         b6.setVisibility(View.INVISIBLE);
     }
 
-    //アクションボタンメニューをアクションバーに入れる
+    //액션버튼메뉴를 액션바에 넣음
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main,menu);
         return true;
     }
 
-    //アクションボタンをクリックするとカテゴリ別のイメージを見れる
+    //액션버튼을 클릭하면 카테고리별 이미지를 볼 수 있음
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
 
-        //drawableのイメージを持って来る
+        //drawable의 이미지를 가져옴
         getDrawableImage();
 
         int id = item.getItemId();
@@ -399,7 +399,7 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
 
-            //リストに重複値があれば一つを削除
+            //리스트에 중복값이 있으면 하나를 삭제
             for(int i=0; i<sList.size(); i++){
                 for(int j=0; j<sList.size(); j++) {
                     if (sList.get(i).getProduct_name().equals(sList.get(j).getProduct_name())){
@@ -416,7 +416,7 @@ public class MainActivity extends AppCompatActivity {
             d2.setPositiveButton("확인", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
-                    //アクティビティを転換
+                    //액티비티를 전환
                     Intent it = new Intent(MainActivity.this, ShoppingListActivity.class);
                     startActivity(it);
                 }
@@ -426,7 +426,7 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
 
-        //服のカテゴリ
+        //옷 카테고리
         if (id == R.id.clothes) {
 
             c1.setVisibility(View.VISIBLE);
@@ -467,7 +467,7 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
 
-        //食べ物のカテゴリ
+        //음식 카테고리
         if (id == R.id.food) {
 
             fu1.setImageResource(android.R.color.transparent);
@@ -508,7 +508,7 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
 
-        //家具のカテゴリ
+        //가구 카테고리
         if (id == R.id.furniture){
             fu1.setVisibility(View.VISIBLE);
             fu2.setVisibility(View.VISIBLE);
@@ -548,7 +548,7 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
 
-        //家電製品のカテゴリ
+        //가전제품 카테고리
         if (id == R.id.appliance){
             a1.setVisibility(View.VISIBLE);
             a2.setVisibility(View.VISIBLE);
@@ -588,7 +588,7 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
 
-        //バスルームの物のカテゴリ
+        //욕실용품 카테고리
         if (id == R.id.bath){
             b1.setVisibility(View.VISIBLE);
             b2.setVisibility(View.VISIBLE);
