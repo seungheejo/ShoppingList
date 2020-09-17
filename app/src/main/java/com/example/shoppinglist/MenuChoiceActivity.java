@@ -13,12 +13,12 @@ public class MenuChoiceActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menuchoice);
 
-        //アクションを隠す
+        //액션을 숨김
         hideActionBar();
 
     }
 
-    //アクションを隠す
+    //액션을 숨김
     private void hideActionBar() {
         ActionBar actionBar = getSupportActionBar();
         if(actionBar != null)
