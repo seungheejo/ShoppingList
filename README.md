@@ -16,7 +16,7 @@
 * ActionBar에 넣을 메뉴를 xml파일에 옷, 음식, 가구, 가전제품, 해산물의 카테고리 별 이미지를 넣고, 장바구니를 저장할 이미지도 추가한다. 
 * 이 파일을 onCreateOptionsMenu 메소드에서 액션버튼 메뉴를 Inflate로 ActionBar에 넣는다. 
 * 카테고리 별 이미지들은 처음에 setVisibility(View.INVISIBLE) 로 지정되어 있기 때문에 보이지 않다가 onOptionsItemSelected 메소드에서 ActionBar에 올려져 있는 카테고리를 선택하면 
-카테고리에 해당하는 이미지들은 setVisibility(View.VISIBLE )로 변경하고 해당하지 않는 이미지들은setImageResource(android.R.color.transparent) 로 변경해서 안보이게 구현하였다. 
+카테고리에 해당하는 이미지들은 setVisibility(View.VISIBLE )로 변경하고, 해당하지 않는 이미지들은setImageResource(android.R.color.transparent) 로 변경해서 안보이게 구현하였다. 
 
 ### 드래그 앤 드랍
 * ActionBar에 있는 카테고리 이미지를 클릭하면 그 아래에 카테고리에 해당하는 이미지들이 보여진다. 
