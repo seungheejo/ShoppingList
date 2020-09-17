@@ -2,10 +2,10 @@ package com.example.shoppinglist;
 
 public class ShoppingList {
 
-    private int shoppinglistNum; //ショッピングリストのナンバー
-    private String product_name; //商品の名
-    private String product_type; //商品のカテゴリ
-    private int product_number; //商品の数
+    private int shoppinglistNum; //쇼핑리스트 넘버
+    private String product_name; //상품명
+    private String product_type; //상품 카테고리
+    private int product_number; //상품의 수
 
     public ShoppingList() {
     }
